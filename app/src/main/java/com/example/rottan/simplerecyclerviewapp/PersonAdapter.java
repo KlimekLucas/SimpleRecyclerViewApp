@@ -39,7 +39,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
         Log.d("PersonAdapter","onCreateViewHolder");
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_layout,viewGroup,false);
 
-
         return new ViewHolder(view);
     }
 
@@ -53,7 +52,7 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        Log.d("PersonAdapter","onBindViewHolder");
+        Log.d("PersonAdapter","getItemCount");
         return people.size();
     }
 

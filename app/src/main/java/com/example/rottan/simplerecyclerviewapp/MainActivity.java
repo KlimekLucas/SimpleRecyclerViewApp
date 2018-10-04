@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.Ite
 
     EditText etName, etPhone;
     TextView tvName, tvPhone;
-    Button btnAdd;
+    Button btnAdd, btnDelete;
     ListFrag listFrag;
     FragmentManager fragmentManager;
 
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.Ite
         tvName = findViewById(R.id.tvName);
         tvPhone = findViewById(R.id.tvPhone);
         btnAdd = findViewById(R.id.btnAdd);
+        btnDelete = findViewById(R.id.btnDelete);
 
         fragmentManager = this.getSupportFragmentManager();
         listFrag = (ListFrag) fragmentManager.findFragmentById(R.id.ListFrag);
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.Ite
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("MainActivity","onClick");
+                Log.d("MainActivity","btnAddonClick");
                 if (etName.getText().toString().isEmpty() || etPhone.getText().toString().isEmpty())
                 {
                     Toast.makeText(MainActivity.this,"please fill all fields",Toast.LENGTH_SHORT).show();
@@ -50,14 +51,58 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.Ite
             }
         });
 
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity", "btnDeleteClick");
+                if (tvName.getText().toString().isEmpty() || tvPhone.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "nothing selecded", Toast.LENGTH_SHORT).show();
+                } else if (ApplicationClass.people.size() <= 0) {
+                    Toast.makeText(MainActivity.this, "nothing to Delete", Toast.LENGTH_SHORT).show();
+                } else {
+                    // int idex = ApplicationClass.people.indexOf(1);
+
+                    ApplicationClass.people.remove(0);
+                    Toast.makeText(MainActivity.this, "Person succesfully removed", Toast.LENGTH_SHORT).show();
+                    etName.setText(null);
+                    etPhone.setText(null);
+                    listFrag.notifyDataChanged();
+                }
+            }
+        });
+
+
     }
 
 
 
     @Override
-    public void OnItemClicked(int index) {
+    public void OnItemClicked(final int index) {
         Log.d("MainActivity","OnItemClicked");
         tvName.setText(ApplicationClass.people.get(index).getName());
         tvPhone.setText(ApplicationClass.people.get(index).getPhoneNo());
+
+
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("MainActivity", "btnDeleteClick");
+                if (tvName.getText().toString().isEmpty() || tvPhone.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this, "nothing selecded", Toast.LENGTH_SHORT).show();
+                } else if (ApplicationClass.people.size() <= 0) {
+                    Toast.makeText(MainActivity.this, "nothing to Delete", Toast.LENGTH_SHORT).show();
+                } else {
+                    // int idex = ApplicationClass.people.indexOf(1);
+
+                    ApplicationClass.people.remove(index);
+                    Toast.makeText(MainActivity.this, "Person succesfully removed", Toast.LENGTH_SHORT).show();
+                    etName.setText(null);
+                    etPhone.setText(null);
+                    listFrag.notifyDataChanged();
+                }
+            }
+        });
     }
 }

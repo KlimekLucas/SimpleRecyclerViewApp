@@ -21,5 +21,7 @@ public class ApplicationClass extends Application {
         people.add(new Person("arch rafał","998"));
         people.add(new Person("arch raziel","999"));
         people.add(new Person("abaddon","99999"));
+
+
     }
 }
