@@ -16,11 +16,14 @@ public class ApplicationClass extends Application {
         Log.d("ApplicationClass", "creating list");
         people = new ArrayList<Person>();
         people.add(new Person("jan Kowalski","99999"));
-        people.add(new Person("Pan szatan","666"));
-        people.add(new Person("arch michas","997"));
-        people.add(new Person("arch rafał","998"));
-        people.add(new Person("arch raziel","999"));
-        people.add(new Person("abaddon","99999"));
+        people.add(new Person("Tadzio Nowak","666999"));
+        people.add(new Person("Anna Kowalska","993337"));
+        people.add(new Person("Vukko","912398"));
+        people.add(new Person("Zaan","99921"));
+        people.add(new Person("Mordimer Madderin","99999"));
+        people.add(new Person("Krzysztof Tomaszewski","567657"));
+        people.add(new Person("Blaifra","234222"));
+        people.add(new Person("Zaknafein","345344"));
 
 
     }

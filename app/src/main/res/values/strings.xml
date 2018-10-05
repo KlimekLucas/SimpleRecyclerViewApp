@@ -3,4 +3,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_update_person">UpdatePersonActivity</string>
+    <string name="enter_phone_number">enter Phone Number</string>
+
+    <string name="delete_person">Delete Person</string>
+    <string name="add_person">Add Person</string>
+
+    <string name="enter_name">Enter Name</string>
+    <string name="close">Close</string>
+
+
+
 </resources>

@@ -70,8 +70,8 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.ViewHolder
                     public void onClick(View view) {
                         activity.OnItemClicked(people.indexOf((Person)view.getTag()));
                     }
-                });
+                }); }
                 }
-            }
+
         }
 

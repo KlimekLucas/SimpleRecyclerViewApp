@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+android:background="@color/background"
     android:baselineAligned="false"
     tools:context=".MainActivity">
 
     <fragment
         android:id="@+id/ListFrag"
         android:name="com.example.rottan.simplerecyclerviewapp.ListFrag"
-        android:layout_width="203dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,15 +35,15 @@
             android:name="com.example.rottan.simplerecyclerviewapp.DetailFrag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
+            android:layout_weight="1"
             tools:layout="@layout/fragment_add_person" />
 
         <fragment
             android:id="@+id/addPersonFrag"
             android:name="com.example.rottan.simplerecyclerviewapp.AddPersonFrag"
             android:layout_width="match_parent"
-            android:layout_height="168dp"
-            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             tools:layout="@layout/fragment_detail" />
 
     </LinearLayout>
